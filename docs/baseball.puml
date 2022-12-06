@@ -1,0 +1,30 @@
+@startuml
+note as A1
+<b>메소드가 한가지 일만 하게</b>
+1. 사용자가 숫자를 말한다.
+2. 숫자와 정답을 비교한다.
+3. 랜덤한 숫자(정답)를 만든다.
+4. 결과를 출력한다.
+5. 반복한다.
+end note
+
+class InputView{
+    public 더할건지물어본다()
+    public 답을_물어본다()
+    private 숫자를받는다()
+}
+class ResultView{
+    public 판독결과를알려준다()
+}
+class Game{
+    inputView에서 숫자를 받아온다
+    resultview에다 처리 후 결과를 넘겨준다
+    createNewNumber()
+    compareTwoNumbers()
+    startNewGame()
+}
+
+InputView <-d- Game
+ResultView <-d- Game
+
+@enduml
