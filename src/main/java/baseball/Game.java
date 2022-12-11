@@ -9,22 +9,38 @@ public class Game {
     public static void main(String[] args) {
         InputView inputView = new InputView();
         Game game = new Game();
-//        do {
-//            game.startGame();
-//
-//        }
-//        while (inputView.nextGame());
+        do {
+            game.startGame();
+        }
+        while (inputView.askNextGame());
     }
 
     public void startGame() {
         // 숫자를 생성하고
         String answer = createNewAnswer();
+        String userInput;
+        int strikeCount;
+        int ballCount;
 
-        // 입력을 받고
-        inputView.askAnswer();
+        do {
+            userInput = inputView.askAnswer();
 
-        // 결과를 처리하고
+            ballCount = getBallCount(userInput, answer);
+            strikeCount = getStrikeCount(userInput, answer);
 
+            resultView.printResult(ballCount, strikeCount);
+        } while (userInput != answer);
+
+    }
+
+    public int getStrikeCount(String userInput, String answer) {
+        // 대충 스트라이크 수
+        return 1;
+    }
+
+    public int getBallCount(String userInput, String answer) {
+        // 대충 볼 수
+        return 1;
     }
 
     public String createNewAnswer() {

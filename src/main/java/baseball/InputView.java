@@ -9,8 +9,8 @@ public class InputView {
         return getNumber() == 1;
     }
 
-    public int askAnswer() {
-        return getNumber();
+    public String askAnswer() {
+        return Integer.toString(getNumber());
     }
 
     private int getNumber() {
